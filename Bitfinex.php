@@ -1053,7 +1053,7 @@ class Bitfinex {
             CURLOPT_POST            => TRUE,
             CURLOPT_RETURNTRANSFER  => TRUE,
             CURLOPT_HTTPHEADER      => $headers,
-            CURLOPT_SSL_VERIFYPEER  => FALSE,
+            CURLOPT_SSL_VERIFYPEER  => TRUE,
             CURLOPT_CONNECTTIMEOUT  => self::CONNECT_TIMEOUT, 
             CURLOPT_POSTFIELDS      => ''
     	));
@@ -1090,7 +1090,7 @@ class Bitfinex {
     	curl_setopt_array($ch, array(
             CURLOPT_URL             => $url,
             CURLOPT_RETURNTRANSFER  => TRUE,
-            CURLOPT_SSL_VERIFYPEER  => FALSE,
+            CURLOPT_SSL_VERIFYPEER  => TRUE,
             CURLOPT_CONNECTTIMEOUT  => self::CONNECT_TIMEOUT,
     	));
     	
