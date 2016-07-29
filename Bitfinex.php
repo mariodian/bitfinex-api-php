@@ -827,19 +827,28 @@ class Bitfinex {
     }
 
     /**
-    * Get Transfer
+    * Transfer
     *
     * Allow you to move available balances between your wallets.
     *
+    * @param string $currency       USD/BTC/LTC/ETH
+    * @param price $amount          Amount to transfer.
+    * @param string $walletfrom     Wallet to transfer from.
+    * @param string $walletto       Wallet to transfer to.
+    *
     * @return mixed
     */
-    public function get_transfer() {
+    public function transfer($currency, $amount, $walletfrom, $walletto) {
     	$request = $this->endpoint('transfer');
-    	
+
     	$data = array(
-            'request' => $request
+            'request'       => $request,
+            'currency'      => $currency,
+            'amount'        => $amount,
+            'walletfrom'    => $walletfrom,
+            'walletto'      => $walletto
     	);
-    	
+
     	return $this->send_auth_request($data);
     }
 
