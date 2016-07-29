@@ -590,32 +590,35 @@ class Bitfinex {
     * View your past trades.
     *
     * @param string $symbol         The name of the symbol (see `/symbols`).
-    * @param time $timestamp        Trades made before this timestamp won’t be 
-    *                               returned.
-    * @param int $limit_trades      Optional. Limit the number of trades 
+    * @param int $limit_trades      Optional. Limit the number of trades
     *                               returned. Default is 50.
-    * @param int $reverse           Optional. Return trades in reverse order 
-    *                               (the oldest comes first). Default is 
-    *                               returning newest trades first.
-    * @param time $until            Optional. Trades made after this timestamp 
+    * @param time $timestamp        Trades made before this timestamp won’t be
+    *                               returned.
+    * @param time $until            Optional. Trades made after this timestamp
     *                               won’t be returned.
+    * @param int $reverse           Optional. Return trades in reverse order
+    *                               (the oldest comes first). Default is
+    *                               returning newest trades first.
     * @return mixed
     */
-    public function get_my_trades($symbol = 'BTCUSD', $timestamp, $limit_trades = 50, $reverse = 0, $until = NULL) {
+    public function get_my_trades($symbol = 'BTCUSD', $limit_trades = 50, $timestamp = NULL, $until = NULL, $reverse = 0) {
     	$request = $this->endpoint('mytrades');
-    	
+
     	$data = array(
             'request'       => $request,
             'symbol'        => $symbol,
-            'timestamp'     => $timestamp,
             'limit_trades'  => $limit_trades,
             'reverse'       => $reverse
     	);
-    	
+        
+        if ($timestamp) {
+            $data['timestamp'] = $timestamp;
+    	}
+
     	if ($until) {
     		$data['until'] = $until;
     	}
-    	
+
     	return $this->send_auth_request($data);
     }
 
