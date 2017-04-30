@@ -15,4 +15,4 @@ Get API keys from https://www.bitfinex.com/account/api
     ?>
 
 ## Support me
-Bitcoin donations are welcome at [1DBKaSLXpzGEXSWk1wJLRSAU7qAHhCYXvk](https://blockchain.info/address/1DBKaSLXpzGEXSWk1wJLRSAU7qAHhCYXvk). Thank you!
+Bitcoin donations are welcome at [1x1UnfVJu7cprs3E2jjQ9WRcdDi5KJxAU](https://blockchain.info/address/1x1UnfVJu7cprs3E2jjQ9WRcdDi5KJxAU). Thank you!
