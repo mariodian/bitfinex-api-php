@@ -974,7 +974,7 @@ class Bitfinex {
     * Add data to header for authentication purpose
     *
     * @param array $data
-    * @return json
+    * @return array
     */
     private function prepare_header($data)
     {
